@@ -3,6 +3,17 @@
   "version": "0.2.0",
   "description": "An origami community app.",
   "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esh6597/paper-drip-full.git"
+  },
   "author": "Erin Han",
-  "license": "SEE LICENSE IN README.md"
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/esh6597/paper-drip-full/issues"
+  },
+  "homepage": "https://github.com/esh6597/paper-drip-full#readme"
 }
