@@ -1,19 +1,25 @@
 {
-  "name": "paperdrip-full",
+  "name": "paper-drip-client",
   "version": "0.2.0",
-  "description": "An origami community app.",
+  "description": "Client side for Paper Drip, an origami community app",
   "main": "index.js",
   "scripts": {
-    "test": "react-scripts test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/esh6597/paper-drip-full.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "about": "echo Use the about:suffix notation to find out more about packages or scripts. For example, type yarn about:help for options.",
+    "about:help": "echo Current suffixes: :help :info :babel :webpack :yarn :react",
+    "about: info": "echo Why are these scripts here? && echo These scripts are here to keep track of what the code does in a human-readable way for newbie developers like me. && echo For more information, check out the README file!",
+    "about:babel": "echo Babel core: main Babel package, a JavaScript compiler && echo Babel client: allows compilation from CLI && echo Env and React: compiles ES6 and JSX respectively into more traditional JavaScript.",
+    "about:webpack": "echo test",
+    "about:yarn": "echo Yarn: package manager && echo Yarn was chosen over NPM for front end due to its higher dependency download speed.",
+    "about:react": "echo React: UI framework && echo React was chosen due to familiarity. However, it requires :babel and :webpack to properly compile."
   },
   "author": "Erin Han",
-  "license": "SEE LICENSE IN README.md",
-  "bugs": {
-    "url": "https://github.com/esh6597/paper-drip-full/issues"
-  },
-  "homepage": "https://github.com/esh6597/paper-drip-full#readme"
+  "license": "SEE LICENSE IN ../README.md",
+  "devDependencies": {
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0"
+  }
 }

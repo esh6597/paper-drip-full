@@ -1,6 +1,12 @@
 # Thanks for checking out Paper Drip!
 
-This React SPA is a passion project about origami to help me better cement my understanding of MERN stack, Sass and more.
+Paper Drip aims to be an educational website about origami, with the ability
+for users to learn from tutorials, buy diagrams and post in forums to discuss
+this art form.
+
+This React SPA is a passion project about origami to help me better cement my
+understanding of MERN stack, Sass and more. This repository includes both
+client and API packages, but both are licensed identically below.
 
 Currently a work in progress; please check back soon!
 
