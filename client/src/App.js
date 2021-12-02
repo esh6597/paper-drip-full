@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import "./App.scss";
+import "./App.css";
 
 //Simple app.js React component in order to render with store, nothing more. All UI code will be in UI.js.
 class App extends Component{
