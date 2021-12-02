@@ -3,19 +3,35 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Some metadata for HTML search engines and practice-->
+    <meta name="application-name" content="Paper Drip" />
+    <meta name="author" content="Erin Shuang Han" />
+    <meta name="description" content="An origami community page dedicated to learning and discovery." />
+
+    <!--Note: many search engines do not use these keywords as they've been historically abused to spam. This line is not important at all.-->
+    <meta name="keywords" content="origami,tutorial,papercraft,paper folding" />
+
+    <!--May add more viewport options later.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!--May add dynamic titles here soon.-->
     <title>Paper Drip</title>
   </head>
 
   <body>
+    <!--Where React begins to render application.-->
     <div id="root"></div>
+
+    <!--Info text from Enable Javascript to help users enable JS in their browser in order to run the site.-->
     <noscript>
       For full functionality of this site it is necessary to enable JavaScript.
       Here are the <a href="https://www.enable-javascript.com/">
       instructions how to enable JavaScript in your web browser</a>.
     </noscript>
-    <script src="../dist/paperdripClientApp.js"></script>
+
+    <!--Link to bundled source code.-->
+    <script src="../dist/bundle.js"></script>
   </body>
 
 </html>

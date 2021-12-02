@@ -4,14 +4,16 @@
   "description": "Client side for Paper Drip, an origami community app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode development",
+    "test": "echo Error: no test specified. && exit 1",
     "about": "echo Use the about:suffix notation to find out more about packages or scripts. For example, type yarn about:help for options.",
-    "about:help": "echo Current suffixes: :help :info :babel :webpack :yarn :react :sass",
+    "about:help": "echo Current suffixes: :help :info :babel :webpack :yarn :react :sass && echo If you're looking for back end help, please navigate to the back end scripts and folder instead.",
     "about:info": "echo Why is everything unnecessarily thorough? && echo These scripts are here to keep track of what the code does in a human-readable way for newbie developers like me. && echo For more information about the package itself, check out the README file!",
     "about:babel": "echo Babel core: main Babel package, a JavaScript compiler && echo Babel client: allows compilation from CLI && echo Env and React: compiles ES6 and JSX respectively into more traditional JavaScript.",
     "about:webpack": "echo Webpack: a module bundler && echo Style, Babel, React, CSS and Sass Loaders: loaders used in Webpack to configure different file types. && echo Note: CSS loader depends on Style loader. Sass loader can use Node Sass as well as Dart, but Dart is more up to date.",
     "about:yarn": "echo Yarn: package manager && echo Yarn was chosen over NPM for front end due to its higher dependency download speed.",
-    "about:react": "echo React: UI framework && echo React was chosen due to familiarity. However, it requires :babel and :webpack to properly compile.",
+    "about:react": "echo React: UI framework && echo React was chosen due to familiarity. However, it requires :babel and :webpack to properly compile. && echo React-DOM: provides DOM-specific methods for top level of app.",
     "about:sass": "echo Dart Sass: a CSS extension language && echo Chosen for Webpack utility and powerful features over plain CSS."
   },
   "author": "Erin Han",
@@ -24,13 +26,14 @@
     "babel-loader": "8.0.2",
     "css-loader": "1.0.0",
     "sass": "^1.44.0",
-    "sass-loader": "^12.3.0",
+    "sass-loader": "10.1.1",
     "style-loader": "0.23.0",
     "webpack": "4.19.1",
     "webpack-cli": "3.1.1",
     "webpack-dev-server": "3.1.8"
   },
   "dependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

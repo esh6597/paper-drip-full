@@ -24,7 +24,7 @@ module.exports = {
           "style-loader",
           "css-loader",
           "sass-loader",
-        ],
+        ]
       }
     ]
   },
@@ -32,13 +32,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist/"), //Places output in a dist/ folder
     publicPath: "/dist/", //Tells WP what directory the bundle should go in, and what the public directory URL will be.
-    filename: "paperdripClientApp.js"
+    filename: "bundle.js"
   },
   devServer: { //Configures the development server for testing front end.
     contentBase: path.join(__dirname, "public/"),
-    port: 3000,
+    port: 3000, //What port the server runs on
     publicPath: "http://localhost:3000/dist/", //Tells WP where the bundled code actually is.
-    hotOnly: true //Enables Hot Module Replacement, allowing us to update modules without a full refresh. MUST be turned off for production, but OK to use in development right now.
+    hotOnly: false //Enables Hot Module Replacement, allowing us to update modules without a full refresh. MUST be turned off for production, but OK to use in development right now.
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
