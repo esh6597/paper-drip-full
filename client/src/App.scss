@@ -18,15 +18,18 @@ These apply to this project in specific; I've found that this type of organizati
 - CHECK existing styles before making a new one
 */
 
+//Imports Bootstrap's source Sass files
+@import "~bootstrap/scss/bootstrap";
+
 //SASS VARIABLES
 
 $test-color: #00ffff;
 
-//MAIN THEME
+/* MAIN THEME */
 
 * {
   margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-//ELEMENT CLASSES
+/* ELEMENT CLASSES */
