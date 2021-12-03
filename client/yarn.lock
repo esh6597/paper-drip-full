@@ -2358,6 +2358,11 @@ html-minifier-terser@^6.0.2:
     relateurl "^0.2.7"
     terser "^5.10.0"
 
+html-webpack-injector@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/html-webpack-injector/-/html-webpack-injector-1.1.4.tgz#eee4d11fc14d959b4bddd388b60ecb11e94045ca"
+  integrity sha512-R+HeAYzPeL3dKIr5/a7a2S6R4fy2yHetKiB7cz5rXjwlnU5tghuy58kCBsKA/Qoj94MAgCYwllHmvYqy2nJSdg==
+
 html-webpack-plugin@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-5.5.0.tgz#c3911936f57681c1f9f4d8b68c158cd9dfe52f50"

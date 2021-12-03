@@ -8,15 +8,19 @@
 
 const path = require("path"); //A Node.js library that provides tools for working with file directories.
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //Moves .css files to a separate directory to make loading faster for large stylesheets.
-const devMode = process.env.NODE_ENV !== "production"; //Toggles if the environment is in development or production mode.
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //Extracts webpack bundles to a .html file.
+const HtmlWebpackInjector = require('html-webpack-injector'); //Injects some necessary code into the generated .html file for the code to function.
 
 module.exports = {
   //Tells Webpack what file to begin bundling at; path.resolve here is not necessary but I'm
   //  keeping it here in case I need to change the path.
-  entry: path.resolve('./src/index.js'), 
+  mode: 'production',
+  entry: {
+    index: './src/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'), //Places output in a dist/ folder
-    filename: 'bundle.js' //Controls the name of the outputed file.
+    filename: '[name].js'
   },
   module: {
     rules: [ //Controls what files are tested, and what loaders to test them with.
@@ -35,7 +39,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/, //Compiles .scss, .sass, and .css into CommonJS.
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader, //Can't use style-loader and Mini Css at the same time, so this toggles depending on what mode you're in.
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader', //Adds many features like compatibility and linting.
           'sass-loader',
@@ -47,6 +51,15 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: './index.html',
+      template: './public/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: './index.css'
+    }),
+  ],
   devServer: { //Configures the development server for testing front end.
     port: 3000, //Port that it serves at
     static: {
