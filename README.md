@@ -8,6 +8,8 @@ This web app is a passion project about origami to help me better cement my
 understanding of MERN stack, Sass and more. This repository includes both
 client and API packages, but both are licensed identically below.
 
+Currently a work in progress; please check back soon!
+
 # Usage/Documentation
 
 This isn't a newfangled library or anything like that; Paper Drip is just a 
@@ -19,7 +21,16 @@ When running CLIENT-SIDE code, feel free to use the yarn/npm about command
 to find out more about the dependencies. You can chain :suffixes for more
 information, ex: yarn about:help in bash will display a list of suffixes to use.
 
-Currently a work in progress; please check back soon!
+Currently supported suffixes:
+- :help
+- :info
+- :start
+- :build
+- :babel
+- :webpack
+- :yarn
+- :react
+- :sass
 
 # Licenses
 

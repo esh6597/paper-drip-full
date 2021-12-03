@@ -3,6 +3,7 @@
 //This and all other files in this folder will be bundled into bundle.js.
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import App from './App';
 
 ReactDOM.render(<App />, document.getElementById("root")); //Renders the React app at the "root" div in index.html.

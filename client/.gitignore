@@ -1,2 +1,4 @@
+# This comment is mostly here so I could learn how to write comments in a .gitignore
+# However, this file may eventually expand into more, so I'm leaving space for comments here.
 node_modules
 dist
