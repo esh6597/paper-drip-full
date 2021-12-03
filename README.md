@@ -15,6 +15,28 @@ Currently a work in progress; please check back soon!
 This isn't a newfangled library or anything like that; Paper Drip is just a 
 React SPA that includes a store, blog, user accounts, forums and more.
 
+### Current Features/Features in Development:
+
+These are features that were already in the original website or features that
+will be added over the course of the next few weeks:
+
+- User account tiers (Standard, Moderator, Author, Admin)
+- User login, 3rd party login, user settings
+- Visually functional shop and database (no ecommerce support yet)
+- About page with ability to contact the site owner
+- Blog page that allows approved authors to post to
+- Page search feature via tags and keywords
+
+### Planned Features:
+
+These are features that I intend on adding over the next few months, though
+they are all tentative and subject to change.
+
+- Functional shop: eCommerce support
+- Forums that make use of the Moderator account tier
+- Non-endless pages: overflow pages are hidden or navigable via extra pages
+- Newsletter features
+
 ### Package Scripts
 
 When running CLIENT-SIDE code, feel free to use the yarn/npm about command
