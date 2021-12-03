@@ -7,6 +7,8 @@
 */
 
 const path = require("path"); //A Node.js library that provides tools for working with file directories.
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //Moves .css files to a separate directory to make loading faster for large stylesheets.
+const devMode = process.env.NODE_ENV !== "production"; //Toggles if the environment is in development or production mode.
 
 module.exports = {
   //Tells Webpack what file to begin bundling at; path.resolve here is not necessary but I'm
@@ -31,16 +33,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.s[ac]ss$/i, //Compiles both .sass and scss into CSS then CommonJS.
+        test: /\.(sa|sc|c)ss$/, //Compiles .scss, .sass, and .css into CommonJS.
         use: [
-          {loader: 'style-loader'}, //This requires all 3 of these loaders in this exact order (WP loads them last first)
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          {loader: 'sass-loader'}
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader, //Can't use style-loader and Mini Css at the same time, so this toggles depending on what mode you're in.
+          'css-loader',
+          'postcss-loader', //Adds many features like compatibility and linting.
+          'sass-loader',
         ]
       },
       {
