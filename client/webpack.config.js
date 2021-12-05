@@ -9,17 +9,16 @@
 const path = require("path"); //A Node.js library that provides tools for working with file directories.
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //Moves .css files to a separate directory to make loading faster for large stylesheets.
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //Extracts webpack bundles to a .html file.
-const HtmlWebpackInjector = require('html-webpack-injector'); //Injects some necessary code into the generated .html file for the code to function.
 
 module.exports = {
   //Tells Webpack what file to begin bundling at; path.resolve here is not necessary but I'm
   //  keeping it here in case I need to change the path.
   mode: 'production',
   entry: {
-    index: './src/index.js'
+    index: './src/index.js' //The object notation here is so I can support multiple entry points later on. They're named after the resulting file for now due to output settings.
   },
   output: {
-    path: path.resolve(__dirname, 'dist'), //Places output in a dist/ folder
+    path: path.resolve(__dirname, 'build'), //Controls output folder.
     filename: '[name].js'
   },
   module: {
@@ -54,7 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './public/index.html'
+      template: './src/index.html' //The index.html file is in the src/ folder since WP compiles this into its own index.html in the public folder.
     }),
     new MiniCssExtractPlugin({
       filename: './index.css'
@@ -63,7 +62,7 @@ module.exports = {
   devServer: { //Configures the development server for testing front end.
     port: 3000, //Port that it serves at
     static: {
-      directory: path.join(__dirname, 'public') //Needs to be served from here for now; I tried 'dist' and it currently doesn't work and I don't know why.
+      directory: path.join(__dirname, 'public') //Directory that the dev server serves its files from.
     }
   }
 };

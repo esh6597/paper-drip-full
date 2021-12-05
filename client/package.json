@@ -11,12 +11,12 @@
     "about:help": "echo Current suffixes: :help :info :start :build :babel :webpack :yarn :react :sass && echo For more commands, check the README.",
     "about:info": "echo Why is everything unnecessarily thorough? && echo These scripts are here to keep track of what the code does in a human-readable way for newbie developers like me. && echo For more information about the package itself, check out the README file!",
     "about:babel": "echo Babel core: main Babel package, a JavaScript compiler && echo Babel client: allows compilation from CLI && echo Env and React: compiles ES6, React and JSX respectively into more traditional JavaScript.",
-    "about:webpack": "echo Webpack: a module bundler && echo Style, Babel, CSS and Sass Loaders: loaders used in Webpack to configure different file types. && echo Webpack Client: increases development speed with flexible WP commands.",
+    "about:webpack": "echo Webpack: a module bundler && echo Babel, CSS and Sass Loaders: loaders used in Webpack to configure different file types. && echo Webpack Client: allows for CLI commands for WP.",
     "about:yarn": "echo Yarn: package manager && echo Yarn was chosen over NPM for front end due to its higher dependency download speed.",
     "about:react": "echo React: UI framework && echo React was chosen due to familiarity. However, it requires :babel and :webpack to properly compile. && echo React-DOM: provides DOM-specific methods for top level of app.",
     "about:sass": "echo Dart Sass: a CSS extension language && echo Chosen for Webpack utility and powerful features over plain CSS.",
     "about:start": "echo Runs the development server off build MEMORY (notice no dist pops up) at port 3000.",
-    "about:build": "echo Bundles the app into a /dist folder as bundle.js."
+    "about:build": "echo Bundles the app into a /dist folder."
   },
   "author": "Erin Han",
   "license": "SEE LICENSE IN ../README.md",
