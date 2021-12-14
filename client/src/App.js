@@ -7,7 +7,6 @@ import './App.scss';
 //Import UI
 import UI from './components/UI';
 
-
 //Simple app.js React component in order to render with store, nothing more. All UI code will be in UI.js.
 class App extends Component{
   render(){
