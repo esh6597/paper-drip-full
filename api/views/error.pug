@@ -1,0 +1,8 @@
+//-This extends the layout.pug template
+  File extension defaults to .pug if not specified
+extends layout
+
+//-Content replaces body of layout.pug
+block content
+  h2= message
+  h3= error.status

@@ -1,0 +1,13 @@
+//- 
+  This is just a simple layout for testing.
+  The server does not serve any pages.
+  This comment type will not render into the final HTML comment tags.
+  If you'd like to add final comments, use // (no dash) instead.
+doctype html
+html
+  head
+    title= title
+    //-Block allows other view templates to replace these areas with their own code.
+    block scripts
+  body
+    block content
