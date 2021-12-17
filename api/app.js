@@ -18,25 +18,22 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-//Log actions. Currently using concise 'dev' method, can be configured to show other info.
-app.use(morgan('dev'));
+app.use(morgan('dev')); //Log actions. Currently using concise 'dev' method, can be configured to show other info.
+app.use(express.json()); //This app uses the JSON data format for serving database files.
+app.use(express.urlencoded({ extended: false })); //Parses URL encoded requests.
 
-//This app uses the JSON data format for serving database files.
-app.use(express.json());
-
-//Serves static files from /public directory.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //Serves static files from /public directory.
 
 //Use Routers
 
 
 //Catch missing files and send to error handler--same as Express Generator's
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 //Error Handler
-app.use((err, req, res, next) => {
+app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   //Only provides error in development mode
   res.locals.error = req.app.get('env') === 'development' ? err : {};
