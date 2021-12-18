@@ -44,3 +44,6 @@ app.use(function(err, req, res, next) {
   //Uses Pug layout view to render HTML
   res.render('error');
 });
+
+//Export for use in /bin/www
+module.exports = app;
