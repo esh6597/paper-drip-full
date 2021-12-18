@@ -2,3 +2,6 @@
 # However, this file may eventually expand into more, so I'm leaving space for comments here.
 node_modules
 dist
+bin/server.cert
+bin/server.key
+config.js

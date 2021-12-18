@@ -2,12 +2,25 @@
 const express = require('express');
 const path = require('path');
 
+
 //Logging errors and actions
 const createError = require('http-errors');
 const morgan = require('morgan');
 
-//Mongoose for schemas
+
+//Mongoose for schemas; then connect to MongoDB based on config
 const mongoose = require('mongoose');
+const config = require('./config');
+
+const url = config.mongoUrl;
+const connect = mongoose.connect(url, {
+  appName: 'Paper Drip 0.2.0'
+});
+
+connect.then(() => console.log('Connected correctly to Paper Drip server'),
+  err => console.log(err)
+);
+
 
 //Router Imports
 
@@ -24,6 +37,7 @@ app.use(express.urlencoded({ extended: false })); //Parses URL encoded requests.
 
 app.use(express.static(path.join(__dirname, 'public'))); //Serves static files from /public directory.
 
+
 //Use Routers
 
 
@@ -31,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //Serves static files f
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 //Error Handler
 app.use(function(err, req, res, next) {
@@ -44,6 +59,7 @@ app.use(function(err, req, res, next) {
   //Uses Pug layout view to render HTML
   res.render('error');
 });
+
 
 //Export for use in /bin/www
 module.exports = app;
