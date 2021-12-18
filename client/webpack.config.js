@@ -60,7 +60,7 @@ module.exports = {
     }),
   ],
   devServer: { //Configures the development server for testing front end.
-    port: 3000, //Port that it serves at
+    port: 3000, //Port that it serves at; using a generic number.
     static: {
       directory: path.join(__dirname, 'public') //Directory that the dev server serves its files from.
     }

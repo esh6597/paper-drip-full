@@ -1,50 +1,44 @@
 #!/usr/bin/env node
 
-/**
- * This bin file is currently a pasted default. It will be changed soon to match files.
- * Express 4 recommends using the bin/www file to start web servers rather than running
- *  it in app.js.
- * 
- * npx-express-generator uses an outdated template engine, so this project was scaffolded
- * without it. However, this file is still copied from the default express command.
- */
-
-/**
- * Module dependencies.
+/*
+ This bin file is based on Express Generator's with more comments and minor changes.
+ Express 4 recommends using the bin/www file to start web servers rather than running
+ it in app.js.
+ 
+ npx-express-generator uses a deprecated template engine, so this project was scaffolded
+ without it.
  */
 
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
 
+//Import secure server for login + admin abilities
 const https = require('https');
 const fs = require('fs');
 
-/**
- * Get port from environment and store in Express.
- */
+//Get port from environment and store in Express.
 
-var port = normalizePort(process.env.PORT || '3000');
+//80 is default port number for HTTP traffic.
+//Since we can't use ports under 1024, setting to 3080.
+var port = normalizePort(process.env.PORT || '3080');
 app.set('port', port);
-app.set('secPort', port+443);
+//443 is default port for HTTPS traffic; setting secure port to 3443.
+app.set('secPort', port+363);
 
-/**
- * Create HTTP server.
- */
+
+//Create HTTP server.
 
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+//Listen on provided port, on all network interfaces.
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Create HTTPS server.
- */
+
+//Create HTTPS server.
 
 const options = {
   key: fs.readFileSync(__dirname+'/server.key'),
@@ -53,9 +47,8 @@ const options = {
 
 const secureServer = https.createServer(options, app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+
+//Listen on provided port, on all network interfaces.
 
 secureServer.listen(app.get('secPort'), () => {
     console.log('Server listening on port', app.get('secPort'));
@@ -63,9 +56,8 @@ secureServer.listen(app.get('secPort'), () => {
 secureServer.on('error', onError);
 secureServer.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
+
+//Normalize a port into a number, string, or false.
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -83,9 +75,8 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
+
+//Event listener for HTTP server "error" event.
 
 function onError(error) {
   if (error.syscall !== 'listen') {
@@ -96,7 +87,7 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
+  //Handles specific error codes with messages.
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
@@ -111,9 +102,8 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
+
+//Event listener for HTTP server "listening" event.
 
 function onListening() {
   var addr = server.address();
