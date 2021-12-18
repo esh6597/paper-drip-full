@@ -4,6 +4,7 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const validate = require('../validate');
 
 const contentSchema = new Schema({
   //This property is to tell the API how to render this.
@@ -20,7 +21,8 @@ const contentSchema = new Schema({
     type: String
   },
   image: {
-    type: String
+    type: String,
+    validate: validate.checkImage
   }
 });
 

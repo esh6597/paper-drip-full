@@ -2,15 +2,7 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-
-//Custom validator to check for image extension
-function isImage (string) {
-  return (/\.(gif|jpe?g|png|bmp)$/i).test(string);
-}
-//Add custom error message
-const checkImage = [isImage, 'Unsupported file extension! Please use .gif, .jpg/.jpeg, .png, or .bmp.'];
-
+const validate = require('../validate');
 
 const articleSchema = new Schema({
   name: { //Doesn't have to be unique in case of numerous articles; must be under 100 characters.
@@ -31,7 +23,7 @@ const articleSchema = new Schema({
   thumbnail: { //Must be an image string
     type: String,
     required: true,
-    validate: checkImage
+    validate: validate.checkImage
   },
   //Because we will load this schema a LOT, I wanted to put its actual contents into a separate area.
   //This way, uploads can be split up into different types that will be rendered in the order
