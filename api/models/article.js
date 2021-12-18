@@ -3,26 +3,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-/* Here is some old code for a custom validator function with error message.
-  I've used maxlength below, but this code may be reused for other validators, so
-  I'm keeping it here.
 
-function sumLength (string) {
-  return string.toString().length <= 150;
+//Custom validator to check for image extension
+function isImage (string) {
+  return (/\.(gif|jpe?g|png|bmp)$/i).test(string);
 }
+//Add custom error message
+const checkImage = [isImage, 'Unsupported file extension! Please use .gif, .jpg/.jpeg, .png, or .bmp.'];
 
-Custom message for error
-const sumValid = [sumLength, 'Summary must be below 150 characters!']
-*/
 
 const articleSchema = new Schema({
-  name: { //Doesn't have to be unique in case of numerous articles
+  name: { //Doesn't have to be unique in case of numerous articles; must be under 100 characters.
     type: String,
-    required: [true, 'Article name required.']
+    required: [true, 'Article name required.'],
+    maxlength: [100, 'Title must be below 100 characters!']
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   summary: { //Must be <= 150 characters
     type: String,
@@ -31,7 +30,8 @@ const articleSchema = new Schema({
   },
   thumbnail: { //Must be an image string
     type: String,
-    required: true
+    required: true,
+    validate: checkImage
   },
   //Because we will load this schema a LOT, I wanted to put its actual contents into a separate area.
   //This way, uploads can be split up into different types that will be rendered in the order
@@ -46,6 +46,10 @@ const articleSchema = new Schema({
 }, {
   timestamps: true
 });
+
+//I did not put any tags nor featured property here as they will be included in
+//  a separate API collection as Article IDs in tagged arrays.
+//Comments are excluded; comment schema will reference via ID.
 
 const Article = mongoose.model('Article', articleSchema);
 

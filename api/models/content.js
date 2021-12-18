@@ -23,3 +23,10 @@ const contentSchema = new Schema({
     type: String
   }
 });
+
+//There's no ID link to the content's article since this object's ._id
+//  will be in Article's content array instead.
+
+const Content = mongoose.model('Content', contentSchema);
+
+module.exports = Content;
