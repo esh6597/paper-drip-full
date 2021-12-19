@@ -4,7 +4,11 @@ This file contains validator function exports that can be reused.
 */
 
 
-//Checks for specific image extensions
+//Checks for specific image extensions--note that this only
+//  checks for easy-to-work-with FILENAME EXTENSIONS, as
+//  all images (including user uploaded) will be served
+//  from the hard drive the server is running from
+//  to save on hosting costs.
 function isImage (string) {
   return (/\.(gif|jpe?g|png|bmp)$/i).test(string);
 }

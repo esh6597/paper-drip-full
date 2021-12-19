@@ -11,7 +11,7 @@ const articleSchema = new Schema({
     maxlength: [100, 'Title must be below 100 characters!']
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.ObjectId,
     ref: 'User',
     required: true
   },
@@ -25,14 +25,16 @@ const articleSchema = new Schema({
     required: true,
     validate: validate.checkImage
   },
-  //Because we will load this schema a LOT, I wanted to put its actual contents into a separate area.
-  //This way, uploads can be split up into different types that will be rendered in the order
-  //  they appear in the array. This might just be a convoluted fix, but it allows for uploads above
+  //Because we will load this schema a LOT, I wanted to put its actual 
+  //  contents into a separate area.
+  //This way, uploads can be split up into different types that will 
+  //  be rendered in the order they appear in the array. This might 
+  //  just be a convoluted fix, but it allows for uploads above
   //  file size limit since it splits them.
   //If you have a better way of doing this, PLEASE fork and fix on Github! I'd love it!
   //You can also pick and reuse chunks, editing the article in REPL shell.
   content: [{
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.ObjectId,
     ref: 'Content'
   }]
 }, {

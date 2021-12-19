@@ -4,21 +4,31 @@ const Schema = mongoose.Schema;
 
 
 const commentSchema = new Schema({
-  article: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Article',
-    required: true
+  //ID of main review or article comment was posted on
+  parentID: {
+    type: mongoose.ObjectId,
+    refpath: 'parentType',
+    required: [true, 'Parent ID required!']
   },
-  reply: {
+  //What model type parent uses
+  parentType: {
+    type: String,
+    required: [true, 'Parent type required!'],
+    enum: ['Article','Comment','Review']
+  },
+  //ID of parent comment, if there is any
+  //  If empty, is rendered as a top-level comment
+  parentComment: {
     //References comment ID if comment is in reply to someone else's.
     //  This is mostly to avoid long, nested comment chains.
-    type: mongoose.Schema.Types.ObjectId,
+    //  There is no nesting of comments beyond a single reply indent.
+    type: mongoose.ObjectId,
     ref: 'Comment'
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.ObjectId,
     ref: 'User',
-    required: true
+    required: [true, 'Author field required.']
   },
   content: {
     //This was kept as "content" for consistency's sake. This, however,
@@ -27,10 +37,12 @@ const commentSchema = new Schema({
     required: [true, 'Please enter a comment.']
   },
   likes: {
-    type: Number
+    type: Number,
+    default: 0
   },
   dislikes: {
-    type: Number
+    type: Number,
+    default: 0
   }
 }, {
   timestamps: true
