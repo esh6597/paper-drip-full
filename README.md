@@ -25,7 +25,6 @@ will be added over the course of the next few weeks:
 - Visually functional shop and database (no ecommerce support yet)
 - About page with ability to contact the site owner
 - Blog page that allows approved authors to post to
-- Page search feature via tags and keywords
 
 ### Planned Features:
 
@@ -36,6 +35,7 @@ they are all tentative and subject to change.
 - Forums that make use of the Moderator account tier
 - Non-endless pages: overflow pages are hidden or navigable via extra pages
 - Newsletter features
+- Page search feature via tags and keywords
 
 ### Package Scripts
 

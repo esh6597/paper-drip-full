@@ -21,12 +21,13 @@ const userSchema = new Schema({
   //  verification email to user.
   email: {
     type: String,
-    required: true
+    required: true,
+    validate: validate.checkEmail
   },
   password: {
     type: String,
     required: true,
-    validate: validate.checkImage
+    validate: []
   },
   //Personal info fields are optional to make testing accounts easier.
   //  This also allows users to fill them in later if they just want
@@ -43,7 +44,7 @@ const userSchema = new Schema({
   //Contact info is currently large; may change to separate collection.
   phone: [{
     type: Number,
-    validate: validate.checkImage
+    validate: []
   }],
   //Street address/line 1 of address for shipping
   address1: [{
