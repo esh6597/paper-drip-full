@@ -4,7 +4,7 @@ This file contains validator function exports that can be reused.
 
 These validations may be unnecessary for build; client code will
   validate these fields, and admin users will be able to control
-  the MongoDB.
+  the MongoDB. Keeping here in case I need to enforce.
 */
 
 
@@ -17,6 +17,7 @@ function isImage (string) {
   return (/\.(gif|jpe?g|png|bmp)$/).test(string);
 }
 
+//Exporting as array to fit schema validation field and include error
 exports.checkImage = [isImage, 
   'Unsupported file extension! Please use .gif, .jpg/.jpeg, .png, or .bmp.'];
 
@@ -24,6 +25,8 @@ exports.checkImage = [isImage,
 //Checks for valid email address; does NOT check if
 //  address is live; this is why we have the 'unverified'
 //  account tier.
+//The variety in address syntax is why I've avoided regex
+//  for this part.
 
 function isEmail (string) {
 

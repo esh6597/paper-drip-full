@@ -66,7 +66,9 @@ const userSchema = new Schema({
   }]
   //No payment info yet; will add this once I figure out ecommerce.
 }, {
-  //To keep track of account age
+  //To keep track of account age and prevent new users from
+  //  mass deleting/remaking by forcing their account to age
+  //  before deletion
   timestamps: true
 });
 
