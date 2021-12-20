@@ -15,3 +15,8 @@ function isImage (string) {
 
 exports.checkImage = [isImage, 
   'Unsupported file extension! Please use .gif, .jpg/.jpeg, .png, or .bmp.'];
+
+
+//Checks for valid email address; does NOT check if
+//  address is live; this is why we have the 'unverified'
+//  account tier.
