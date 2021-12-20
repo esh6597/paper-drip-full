@@ -8,17 +8,34 @@ This web app is a passion project about origami to help me better cement my
 understanding of MERN stack, Sass and more. This repository includes both
 client and API packages, but both are licensed identically below.
 
-Currently a work in progress; please check back soon!
+Currently a work in progress; please check back soon! If you have any questions
+or comments (even scathing criticism), feel free to contact me via Github!
 
-# Usage/Documentation
+### Currently working on:
+MongoDB schemas to set examples for front end code to work with.
+Importing and updating Paper Drip 0.1.0's client code for this version.
+
+# About
 
 This isn't a newfangled library or anything like that; Paper Drip is just a 
 React SPA that includes a store, blog, user accounts, forums and more.
 
-### Current Features/Features in Development:
+Nonetheless, see documentation for some extra scripts I've included.
 
-These are features that were already in the original website or features that
-will be added over the course of the next few weeks:
+### Current Features
+
+These are features that were already in the original website or were recently
+added:
+
+- Mongoose Schemas and validation
+- Manual scaffolding; with comments explaining what normally auto-generated
+    files do for reference
+- Package.json scripts (use Yarn!) detailing dependencies
+- SASS files and style variables for easier style editing
+
+### Features in Development:
+
+These are features that will be added over the course of the next few weeks:
 
 - User account tiers (Standard, Moderator, Author, Admin)
 - User login, 3rd party login, user settings
@@ -36,12 +53,17 @@ they are all tentative and subject to change.
 - Non-endless pages: overflow pages are hidden or navigable via extra pages
 - Newsletter features
 - Page search feature via tags and keywords
+- Testing harness
+
+Suggestions extremely welcomed.
+
+# Usage/Documentation
 
 ### Package Scripts
 
 When running CLIENT-SIDE code, feel free to use the yarn/npm about command
 to find out more about the dependencies. You can chain :suffixes for more
-information, ex: yarn about:help in bash will display a list of suffixes to use.
+information, ex: yarn about:help at /client in bash will display a list of suffixes to use.
 
 Currently supported suffixes:
 - :help
@@ -53,6 +75,9 @@ Currently supported suffixes:
 - :yarn
 - :react
 - :sass
+
+This app has no testing capability yet. This is a planned feature for future
+maintainability in case anyone else wants to take over/explore.
 
 # Licenses
 
