@@ -4,6 +4,8 @@ Paper Drip aims to be an educational website about origami, with the ability
 for users to learn from tutorials, buy diagrams and post in forums to discuss
 this art form.
 
+The code also functions as a template/encyclopedia to the various features I've implemented. I tried to avoid pasting code from other projects by parsing lines with added comments so other users know exactly what's happening. Config files have comments in them as well for people who are used to using express-generator or create-react-app.
+
 This web app is a passion project about origami to help me better cement my
 understanding of MERN stack, Sass and more. This repository includes both
 client and API packages, but both are licensed identically below.
@@ -28,8 +30,7 @@ These are features that were already in the original website or were recently
 added:
 
 - Mongoose Schemas and validation
-- Manual scaffolding; with comments explaining what normally auto-generated
-    files do for reference
+- Manual scaffolding; with extensive comments explaining what normally auto-generated files do for reference
 - Package.json scripts (use Yarn!) detailing dependencies
 - SASS files and style variables for easier style editing
 
