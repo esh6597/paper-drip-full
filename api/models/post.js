@@ -7,10 +7,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  threadID: {
+  //All posts in a thread will be responses to the original post, unless
+  //  the post specifically @'s a different one.
+  //There will be no nesting in the forum, so if no parent ID, the post
+  //  will be rendered as a thread.
+  parentID: {
     type: mongoose.ObjectId,
-    ref: 'Thread',
-    required: true
+    ref: 'Post',
+    required: false
   },
   name: {//Post title/summary
     type: String,
