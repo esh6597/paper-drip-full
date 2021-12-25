@@ -23,7 +23,14 @@ connect.then(() => console.log('Connected correctly to Paper Drip server'),
 
 
 //Router Imports
-
+const homeRouter = require('./routes/homeRouter');
+const articleRouter = require('./routes/articleRouter');
+const commentRouter = require('./routes/commentRouter');
+const itemRouter = require('./routes/itemRouter');
+const reviewRouter = require('./routes/reviewRouter');
+const tagRouter = require('./routes/tagRouter');
+const postRouter = require('./routes/postRouter');
+const userRouter = require('./routes/userRouter');
 
 const app = express();
 

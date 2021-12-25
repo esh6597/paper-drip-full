@@ -16,13 +16,16 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 
 const config = require('./config.js');
 
+//Signs with secret key in excluded config.js
 exports.getToken = user => {
   return jwt.sign(user, config.secretKey, {expiresIn: 3600});
 };
 
+//Options for JWT strategy below
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = config.secretKey;
+
 
 exports.jwtPassport = passport.use(
   new JwtStrategy(
