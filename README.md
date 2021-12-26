@@ -14,8 +14,12 @@ Currently a work in progress; please check back soon! If you have any questions
 or comments (even scathing criticism), feel free to contact me via Github!
 
 ### Currently working on:
-Client: importing Paper Drip 0.1.0's code and updating it with new features (see below).
+
+Client: SASS styling and reorganization/redesign of theme
 API: updating routes to match front end
+
+Currently rehauling the old db.json file to match with Mongoose Schema for
+easier database building later on as well as easier testing for client code.
 
 # About
 

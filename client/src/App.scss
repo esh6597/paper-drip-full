@@ -16,20 +16,49 @@ These apply to this project in specific; I've found that this type of organizati
 - ALL variables here need to be updated in variables.module.scss as well
 - Styles for specific elements will be class-based and have names in comments
 - CHECK existing styles before making a new one
+- Skip between sections by searching for ||
 */
 
 //Imports Bootstrap's source Sass files
 @import "~bootstrap/scss/bootstrap";
 
-//SASS VARIABLES
 
-$test-color: #00ffff;
+// || SASS VARIABLES
 
-/* MAIN THEME */
+
+//Fonts
+$font-text-light: 200 20px/1.2 'Mukta', sans-serif;
+$font-text: 300 20px/1.2 'Mukta', sans-serif;
+$font-text-bold: 400 20px/1.2 'Mukta', sans-serif;
+$font-text-thick: 700 25px/1.2 'Mukta', sans-serif;
+
+$font-text-small: 300 16px/1.2 'Mukta', sans-serif;
+
+$font-title-light: 300 30px/1.5 'Roboto', sans-serif;
+$font-title: 400 30px/1.5 'Roboto', sans-serif;
+$font-title-bold: 500 30px/1.5 'Roboto', sans-serif;
+$font-title-large: 700 45px/2 'Roboto', sans-serif;
+
+
+// Colors
+$color-warm-light: #f68e86;
+$color-warm: #dd5964;
+$color-warm-dark: #9e4450;
+
+$color-cool-light: #88d5cd;
+$color-cool: #33b8b8;
+$color-cool-dark: #319ea2;
+
+$color-text: #40373a;
+$color-background: #fcedc9;
+$color-white: #fff;
+
+
+/* || MAIN THEME */
 
 * {
   margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ELEMENT CLASSES */
+/* || ELEMENT CLASSES */
