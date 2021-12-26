@@ -19,7 +19,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'), //Controls output folder.
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/' //Redirects server requests to index.html
   },
   module: {
     rules: [ //Controls what files are tested, and what loaders to test them with.
@@ -63,6 +64,7 @@ module.exports = {
     port: 3000, //Port that it serves at; using a generic number.
     static: {
       directory: path.join(__dirname, 'public') //Directory that the dev server serves its files from.
-    }
+    },
+    historyApiFallback: true //Redirects 404s to index.html
   }
 };
