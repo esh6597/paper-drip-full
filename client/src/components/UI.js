@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import variables from '../variables.module.scss';
 
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Routes, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Sidebar from 'react-sidebar';
 import { Link } from 'react-router-dom';
@@ -149,15 +149,17 @@ class UI extends Component {
                         <BsList style={{fontSize: 32}} />
                     </Button>
                     <div className='content'>
-                        <Switch>
-                            <Route path='/home' component={HomePage} />
+                        <Routes>
+                            <Route exact path='/home'>
+                                <HomePage />
+                            </Route>
                             <Route exact path='/about' render={() => <About />} />
                             <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
                             <Route path='/blog/:articleId' component={ArticleWithId} />
                             <Route exact path='/shop' render={() => <Shop items={this.props.items} />} />
                             <Route path='/shop/:itemId' component={ItemWithId} />
                             <Redirect to='/home' />
-                        </Switch>
+                        </Routes>
                         <Footer />
                     </div>
                 </Sidebar>
