@@ -18,5 +18,5 @@ const corsOptions = (req, callback) => {
 //Allow all CORS requests from all origins
 exports.cors = cors();
 
-//Allow CORS requests fro the origins in whitelist ONLY
+//Allow CORS requests from the origins in whitelist ONLY
 exports.corsWithOptions = cors(corsOptions);

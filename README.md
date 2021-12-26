@@ -14,8 +14,8 @@ Currently a work in progress; please check back soon! If you have any questions
 or comments (even scathing criticism), feel free to contact me via Github!
 
 ### Currently working on:
-MongoDB schemas to set examples for front end code to work with.
-Importing and updating Paper Drip 0.1.0's client code for this version.
+Client: importing Paper Drip 0.1.0's code and updating it with new features (see below).
+API: updating routes to match front end
 
 # About
 
@@ -30,6 +30,7 @@ These are features that were already in the original website or were recently
 added:
 
 - Mongoose Schemas and validation
+- User account tiers (Standard, Moderator, Author, Admin)
 - Manual scaffolding; with extensive comments explaining what normally auto-generated files do for reference
 - Package.json scripts (use Yarn!) detailing dependencies
 - SASS files and style variables for easier style editing
@@ -38,7 +39,6 @@ added:
 
 These are features that will be added over the course of the next few weeks:
 
-- User account tiers (Standard, Moderator, Author, Admin)
 - User login, 3rd party login, user settings
 - Visually functional shop and database (no ecommerce support yet)
 - About page with ability to contact the site owner
