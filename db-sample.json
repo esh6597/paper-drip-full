@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "disclaimer": "This is just a sample db.json not used by the code.",
+      "one": "Can be used to copy paste data for Postman; is currently a front end test database to speed development while API is still not functional.",
+      "two": "Also allows me to collect all of my MongoDB data in one preliminary place as I create content for the site.",
+      "three": "Write your comments here!"
+    }
+  ],
+  "articles": [
+
+  ],
+  "items": [
+
+  ],
+  "posts": [
+
+  ],
+  "tags": [
+
+  ],
+  "users": [
+
+  ],
+  "contents": [
+
+  ],
+  "comments": [
+
+  ],
+  "reviews": [
+    
+  ]
+}
