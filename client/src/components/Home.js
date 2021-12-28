@@ -74,7 +74,7 @@ function Featured(props) {
     
     const featuredDisplay = featured.map(cardItem => {
         return (
-            <div className="col-12 col-sm-6 col-md-4">
+            <div className="col-12 col-sm-6 col-md-4" key={cardItem.id}>
                 <Link to={cardItem.image2 ? `/shop/${cardItem.id}` : `/blog/${cardItem.id}`}>
                     <Card>
                         <Card.Img
