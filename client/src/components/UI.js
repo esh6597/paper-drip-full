@@ -9,6 +9,7 @@ import { Routes, Route, Link, Outlet } from 'react-router-dom';
 
 //Components
 import Toolbar from './Toolbar';
+import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Home from './Home';
 import About from './About';
@@ -72,7 +73,9 @@ function UI() {
   const toggleSidebar = sidebarToggle(!sidebarOpen);
 
   
-  //RENDER
+  //RENDER: breaking down components into their own constants
+  //  for readability that makes sense; see return statement at
+  //  bottom for overview
 
   //Navbar that uses Toolbar component
   const Navbar = () => {
@@ -88,9 +91,14 @@ function UI() {
   };
 
   //Pass store to sidebar
+  //Sidebar is formatted through SCSS variables
   const SidebarMenu = () => {
     return(
-      <div></div>
+      <React.Fragment>
+        <Sidebar 
+          sidebarOpen={sidebarOpen}
+        />
+      </React.Fragment>
     );
   };
 
@@ -130,9 +138,12 @@ function UI() {
     );
   };
 
+
+  //Compile all components
   return(
     <React.Fragment>
       <Navbar />
+
       <SidebarMenu />
       <Button
         onClick={() => toggleSidebar()}
@@ -140,14 +151,16 @@ function UI() {
       >
         <BsList style={{fontSize: 32}} />
       </Button>
+
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='about' element={<About />} />
-        <Route path='blog' element={<Blog articles={this.props.articles} />} />
+        <Route path='blog' element={<Blog articles={articles} />} />
         <Route path='blog/:articleId' element={<ArticleWithId />} />
-        <Route path='shop' element={<Shop items={this.props.items} />} />
+        <Route path='shop' element={<Shop items={items} />} />
         <Route path='shop/:itemId' element={<ItemWithId />} />
       </Routes>
+
       <Footer />
     </React.Fragment>
   );
