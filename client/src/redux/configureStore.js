@@ -10,17 +10,22 @@ import { Comments } from './comments';
 import { Reviews } from './reviews';
 import { Cart } from './cart';
 
-export const ConfigureStore = () => {
-    const store = createStore(
-        combineReducers({
-            articles: Articles,
-            items: Items,
-            comments: Comments,
-            reviews: Reviews,
-            cart: Cart
-        }),
-        applyMiddleware(thunk, logger)
-    );
+//Combine
+const rootReducer = combineReducers({
+  articles: Articles,
+  items: Items,
+  comments: Comments,
+  reviews: Reviews,
+  cart: Cart
+});
 
-    return store;
+function ConfigureStore() {
+  const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk, logger)
+  );
+
+  return store;
 }
+
+export default ConfigureStore;

@@ -26,19 +26,19 @@ import { fetchArticles, fetchItems,
   postComment } from '../redux/ActionCreators';
 
 //Cosmetic
-import Sidebar from 'react-sidebar';
+//import Sidebar from 'react-sidebar';
 import { BsList } from 'react-icons/bs';
 import Button from '@restart/ui/esm/Button';
 
-
-function UI() {
+const UI = (props) => {
   //Redux store values--replaces mapStateToProps
-  const articles = useSelector(state => state.articles);
-  const items = useSelector(state => state.items);
-  const comments = useSelector(state => state.comments);
-  const reviews = useSelector(state => state.reviews);
-  const cart = useSelector(state => state.cart);
 
+  const store = useSelector(state => state);
+  articles = store.articles;
+  items = store.items;
+  comments = store.comments;
+  reviews = store.reviews;
+  cart = store.cart;
 
   //Hook to dispatch actions to our redux store;
   //  replaces mapDispatchToProps
@@ -61,11 +61,10 @@ function UI() {
 
   //Replaces componentDidMount
   useEffect(() => {
-    articlesFetch();
-    itemsFetch();
-    reviewsFetch();
-    commentsFetch();
-  //Only runs on first render for performance via empty array
+    articlesFetch;
+    itemsFetch;
+    reviewsFetch;
+    commentsFetch;
   }, []);
 
   //State hooks
@@ -168,4 +167,4 @@ function UI() {
 
 //Null values for connect since there are no class components
 //  Connect used for subscribing to the store only
-export default connect(null, null)(UI);
+export default connect()(UI);

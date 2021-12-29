@@ -1,12 +1,13 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import UI from './components/UI';
-import { createStore } from 'redux';
+import ConfigureStore from './redux/configureStore';
 import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
 
 //Redux store
-const store = createStore();
+const store = ConfigureStore();
 
 const App = () => {
   return (
