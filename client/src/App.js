@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UI from './components/UI';
-import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
-import { ConfigureStore } from './redux/configureStore';
+
 import './App.scss';
 
-const store = ConfigureStore();
+//Redux store
+const store = createStore();
 
-class App extends Component {
-
-  render () {
-    return (
-          <Provider store={store}>
-            <BrowserRouter>
-              <div className="App">
-                <UI />
-              </div>
-            </BrowserRouter>
-          </Provider>
-    );
-  }
+const App = () => {
+  return (
+    <Provider store={store}>
+      {/*React router wrapper must be higher order, so it's here.*/}
+      <BrowserRouter>
+        <UI />
+      </BrowserRouter>
+    </Provider>
+  );
 }
 
 export default App;

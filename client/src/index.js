@@ -1,8 +1,10 @@
-//This is the entry point for our webpack configuration of all JavaScript files here.
+//This is the entry point for our webpack configuration of all JavaScript 
+//  files here.
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
-//Imported Bootstrap here so it could apply to all subcomponents.
+//Imported Bootstrap here so it could apply to all subcomponents
+//  and be a higher order than custom CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
@@ -12,5 +14,5 @@ render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

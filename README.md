@@ -21,6 +21,12 @@ API: updating routes to match front end
 Currently rehauling the old db.json file to match with Mongoose Schema for
 easier database building later on as well as easier testing for client code.
 
+### Currently looking for:
+
+- Advice on comment formatting and import organization
+- Libraries I might be missing out on
+- Production and AWS tips
+
 # About
 
 This isn't a newfangled library or anything like that; Paper Drip is just a 
