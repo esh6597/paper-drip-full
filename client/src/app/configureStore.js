@@ -11,6 +11,7 @@ import { Comments } from './comments';
 import { Reviews } from './reviews';
 import { Cart } from './cart';
 
+//Automatically applies thunk
 const Store = configureStore({
   reducer: {
     articles: Articles,
