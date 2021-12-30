@@ -34,11 +34,11 @@ const UI = (props) => {
   //Redux store values--replaces mapStateToProps
 
   const store = useSelector(state => state);
-  articles = store.articles;
-  items = store.items;
-  comments = store.comments;
-  reviews = store.reviews;
-  cart = store.cart;
+  const articles = store.articles;
+  const items = store.items;
+  const comments = store.comments;
+  const reviews = store.reviews;
+  const cart = store.cart;
 
   //Hook to dispatch actions to our redux store;
   //  replaces mapDispatchToProps
