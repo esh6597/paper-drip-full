@@ -26,6 +26,7 @@ export const articleSlice = createSlice({
             state.errMess = action.payload,
             state.articles = []
         },
+        //Passes checks; render articles
         addArticles: (state, action) => {
             state.isLoading = false;
             state.errMess = null;
